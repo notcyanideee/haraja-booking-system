@@ -1,0 +1,50 @@
+/* --- Dark Mode Overrides --- */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --secondary-dark: #FFFFFF;
+    --text-color: #E0E0E0;
+    --accent-gray: #1E1E1E;
+    --nav-bg: rgba(18, 18, 18, 0.98);
+    --border-color: #333333;
+    --card-bg: #2B2B2B;
+    --footer-bg: #1a1a1a;
+    --hero-bg: #1B1B1B;
+    --hero-text: #FFFFFF;
+    --text-color: #E6E6E6;
+    --muted-text: #B8B8B8;
+}
+
+/* In dark mode, ensure headings and logos switch to white */
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4, 
+[data-theme="dark"] h5, 
+[data-theme="dark"] h6,
+[data-theme="dark"] .brand-logo {
+    color: #FFFFFF;
+}
+
+[data-theme="dark"] .site-header.scrolled .brand-logo,
+[data-theme="dark"] .site-header.scrolled .nav-links a {
+    color: #FFFFFF;
+}
+
+
+[data-theme="dark"] .form-control {
+    background: #242424;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: #999;
+}
+
+[data-theme="dark"] .form-control:focus {
+    border-color: var(--primary-gold);
+}
+
+[data-theme="dark"] .form-label {
+    color: #fff;
+}

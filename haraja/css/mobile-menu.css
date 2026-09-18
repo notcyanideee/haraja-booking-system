@@ -1,0 +1,100 @@
+/* Default: Hide hamburger and mobile menu on desktop screens */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 9999; /* Keeps button above the menu overlay */
+    position: relative;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color, #333);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Mobile Menu Overlay Styles */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen to the right */
+    width: 100%;
+    max-width: 350px;
+    height: 100vh;
+    background-color: var(--bg-color, #ffffff);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9998;
+    transition: right 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Class added by JS to slide the menu in */
+.mobile-menu-overlay.active {
+    right: 0;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-nav-links li {
+    margin: 25px 0;
+}
+
+.mobile-nav-links a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--text-color, #333);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+    color: var(--primary-gold, #d4af37);
+}
+
+.mobile-book-now {
+    margin-top: 40px !important;
+}
+
+/* ------------------------------------------- */
+/* MEDIA QUERY: Mobile Devices (768px and below) */
+/* ------------------------------------------- */
+@media screen and (max-width: 768px) {
+    /* Hide desktop navigation links */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Optionally hide the desktop 'Book Now' button to save header space */
+    .btn-book {
+        display: none; 
+    }
+
+    /* Show the hamburger icon */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hamburger Animation to 'X' when active */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
